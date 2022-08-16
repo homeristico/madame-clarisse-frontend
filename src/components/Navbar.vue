@@ -43,36 +43,25 @@
                data-bs-toggle="dropdown" aria-expanded="false">
               Contacto
             </a>
+
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
+              <li v-for="contacto in contactos">
                 <a
                     class="dropdown-item"
-                    href="https://api.whatsapp.com/send?phone=573028600085"
+                    :href="contacto.url"
                     target="_blank"
                 >
-                  What´s App
+                  {{contacto.redSocial}}
                 </a>
               </li>
-              <li>
-                <a
-                    class="dropdown-item"
-                    href="https://www.facebook.com/marlon.murillo.3762"
-                    target="_blank"
-                >
-                  Facebook
-                </a>
-              </li>
-              <li><a class="dropdown-item" href="#">Instagram</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
+
+
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control input-search me-2" type="search" placeholder="nombre producto" aria-label="Search">
-          <button class="button-search " type="button">Buscar</button>
+          <input v-model="nameSearch" class="form-control input-search me-2" type="search" placeholder="nombre producto" aria-label="Search">
+          <button @click="buscarProductoPorNombre" class="button-search " type="button">Buscar</button>
         </form>
       </div>
     </div>
@@ -82,7 +71,7 @@
 <script>
 
 import { useStore } from 'vuex';
-import { onBeforeMount } from "vue";
+import {computed, onBeforeMount} from "vue";
 import { ref } from "vue";
 
 export default {
@@ -90,11 +79,27 @@ export default {
   setup(){
     const store = useStore();
     const url = store.state.url;
+
+
     let categorias = ref();
+    let contactos = ref();
+    let nameSearch = ref();
+
+
+    let name = computed(() => store.state.name);
+    let categoriaId = computed(() => store.state.categoriaId);
+    let page = computed(() => store.state.page);
 
    onBeforeMount(() => {
      cargarCategorias();
+     cargarContacto();
    });
+
+   const cargarContacto = async () => {
+     const res = await fetch(`${url}/api/contacto`);
+     contactos.value = await res.json();
+
+   }
 
 
     const cargarCategorias = async () => {
@@ -104,12 +109,23 @@ export default {
 
     // filtro productos por categoria
     const filtrarProductoPorCategoria = async (id) => {
-      store.dispatch('cargarProductos',id)
+      store.dispatch("chageName", "")
+     store.dispatch('chageCategoria',id)
+      store.dispatch('chagePage', 1)
+      store.dispatch('cargarProductos',{categoriaId: categoriaId.value, name: name.value, page:page.value})
+    }
+
+    const buscarProductoPorNombre = async () => {
+     store.dispatch("chageName", nameSearch.value)
+      store.dispatch('chagePage', 1)
+      store.dispatch('cargarProductos',{categoriaId: categoriaId.value, name: name.value, page:page.value})
+      nameSearch.value = "";
+
     }
 
 
     return {
-          categorias, filtrarProductoPorCategoria
+          categorias, filtrarProductoPorCategoria, contactos, buscarProductoPorNombre, nameSearch
     }
   }
 }

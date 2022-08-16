@@ -3,28 +3,28 @@
     <img :src="require('./../assets/imagenes background/arbol.png')" alt="" class="imagen-titulo">
     <h1 class="titulo">MADAME CLARISSE</h1>
 
-    <ul class="redes">
-      <li style="--clr:#25d366">
-        <a href="https://api.whatsapp.com/send?phone=573028600085" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-      </li>
-      <li style="--clr:#1da1f2">
-        <a href="https://www.facebook.com/marlon.murillo.3762" target="_blank">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-      </li>
-      <li style="--clr:#dd2a7b">
-        <a href="https://www.instagram.com/madameclarissestore/" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      </li>
-      <li style="--clr:#ff0000">
-        <a href="https://www.youtube.com/channel/UCQqhSn0yumS37gGQg-ABLEg" target="_blank">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-      </li>
-    </ul>
+<!--    <ul class="redes">-->
+<!--      <li style="&#45;&#45;clr:#25d366">-->
+<!--        <a href="https://api.whatsapp.com/send?phone=573028600085" target="_blank">-->
+<!--          <i class="fa-brands fa-whatsapp"></i>-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li style="&#45;&#45;clr:#1da1f2">-->
+<!--        <a href="https://www.facebook.com/marlon.murillo.3762" target="_blank">-->
+<!--          <i class="fa-brands fa-facebook-f"></i>-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li style="&#45;&#45;clr:#dd2a7b">-->
+<!--        <a href="https://www.instagram.com/madameclarissestore/" target="_blank">-->
+<!--          <i class="fa-brands fa-instagram"></i>-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li style="&#45;&#45;clr:#ff0000">-->
+<!--        <a href="https://www.youtube.com/channel/UCQqhSn0yumS37gGQg-ABLEg" target="_blank">-->
+<!--          <i class="fa-brands fa-youtube"></i>-->
+<!--        </a>-->
+<!--      </li>-->
+<!--    </ul>-->
   </div>
 </template>
 
@@ -69,7 +69,6 @@ export default {
 .imagen-titulo {
   width: 8vw;
   height: 15vh;
-  margin-left: 22vw;
 }
 
 .lobster {
