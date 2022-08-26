@@ -59,10 +59,10 @@
 
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        
           <input v-model="nameSearch" class="form-control input-search me-2" type="search" placeholder="nombre producto" aria-label="Search">
           <button @click="buscarProductoPorNombre" class="button-search " type="button">Buscar</button>
-        </form>
+        
       </div>
     </div>
   </nav>
@@ -188,6 +188,7 @@ a.categoria {
 }
 
 .input-search {
+  max-width: 20vw;
   border-top: none;
   border-right: 0px;
   border-left: none;

@@ -9,7 +9,7 @@
 
       <div class="col mt-5" v-for="producto in productos.contenido" v-if="productos.contenido.length > 0">
         <div class="card" >
-          <img src="https://http2.mlstatic.com/D_NQ_NP_883091-MCO42569690149_072020-O.webp"
+          <img :src="producto.imgUrl"
                class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text indieflower text-center">{{producto.name}}</p>
@@ -44,8 +44,13 @@
       <ul class="pagination">
 
         <li class="page-item link-pagination" >
-          <a @click="paginacion(productos.numeroPagina - 1)" class="page-link" v-if="productos.numeroPagina > 1">
-            {{productos.numeroPagina - 1}}
+          <a
+              href="#productos" 
+              @click="paginacion(productos.numeroPagina - 1)" 
+              class="page-link" 
+              v-if="productos.numeroPagina > 1"
+            >
+              {{productos.numeroPagina - 1}}
           </a>
         </li>
         <li class="page-item active" aria-current="page">
@@ -54,13 +59,22 @@
           </span>
         </li>
         <li class="page-item link-pagination">
-          <a @click="paginacion(productos.numeroPagina + 1)" class="page-link" v-if="productos.numeroPagina < productos.totalPaginas">
+          <a 
+              href="#productos" 
+              @click="paginacion(productos.numeroPagina + 1)" 
+              class="page-link" 
+              v-if="productos.numeroPagina < productos.totalPaginas"
+          >
             {{productos.numeroPagina + 1}}
           </a>
         </li>
         <li class="page-item"><a class="page-link" > --- </a></li>
         <li class="page-item link-pagination">
-          <a @click="paginacion(productos.totalPaginas)" class="page-link" >
+          <a 
+              href="#productos" 
+              @click="paginacion(productos.totalPaginas)" 
+              class="page-link" 
+            >
             {{productos.totalPaginas}}
           </a>
         </li>
