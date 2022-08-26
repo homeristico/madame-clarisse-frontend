@@ -3,6 +3,7 @@
   <Carrusel></Carrusel>
   <Navbar></Navbar>
   <Contenedorcards></Contenedorcards>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -11,14 +12,15 @@ import Header from "@/components/Header";
 import Carrusel from "@/components/Carrusel";
 import Navbar from "@/components/Navbar";
 import Contenedorcards from "@/components/Contenedorcards";
+import Footer from "./components/Footer.vue";
 
 export default {
   components: {
     Header,
     Carrusel,
     Navbar,
-    Contenedorcards
-
+    Contenedorcards,
+    Footer
   }
 
 
