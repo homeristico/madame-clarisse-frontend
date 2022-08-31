@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    url:'http://localhost:8080',
+    url:'https://madameclarissebackend.herokuapp.com',
     productos:{contenido:[]},
     name:"",
     categoriaId:0,
