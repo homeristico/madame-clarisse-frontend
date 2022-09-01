@@ -36,8 +36,8 @@ export default {
   src: url('./../assets/fonts/DynaPuff-VariableFont_wdth\,wght.ttf');
 }
 
-.titulo {
-  color: rgb(215, 140, 218);
+.titulo {  
+  color: rgb(35, 26, 36);
   margin-top: 4vh;
   font-size: 55px;
   text-shadow: -5px 5px #a6acac;
@@ -63,10 +63,10 @@ export default {
   h1,
 h1::after {
   
-    background-image: url("./../assets/flor2.webp");
+    /* background-image: url("./../assets/flor2.webp");
     background-position: center;
     background-size: 750px 250px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     
 
  padding: 16px 20px;
